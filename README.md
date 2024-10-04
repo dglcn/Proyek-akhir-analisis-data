@@ -20,8 +20,8 @@ Proyek ini bertujuan untuk menganalisis dataset bike-sharing dengan fokus pada d
 * **Matplotlib.pyplot:** Untuk visualisasi data.
 * **Seaborn:** Untuk visualisasi data tingkat tinggi.
 
-**Struktur Direktori**
-submission
+**Struktur Direktori** \
+submission \
 ├───dashboard \
 | ├───main_data.csv \
 | └───dashboard.py \
@@ -31,4 +31,4 @@ submission
 ├───notebook.ipynb \
 ├───README.md \
 └───requirements.txt \
-└───url.txt \
+└───url.txt 
