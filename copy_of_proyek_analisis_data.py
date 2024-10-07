@@ -67,7 +67,7 @@ print(df2.info())
 
 """### Gathering Data
 
-Dikarenakan terdapat dua dataset; \
+Dikarenakan terdapat dua dataset;
 *   **day.csv** yang menampilkan jumlah peminjaman sepeda perhari
 *   **hour.csv** yang menampilkan jumlah peminjaman sepeda perjam
 
