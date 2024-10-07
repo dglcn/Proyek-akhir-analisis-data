@@ -201,12 +201,11 @@ st.pyplot(plt)
 Analisis lanjutan pertanyaan 1 (analisis korelasi) \
 Bagaimana pengaruh kondisi cuaca terhadap pengguna sepeda?
 """
-
+plt.figure(figsize=(10, 6))
 corr_matrix = df[['temperature', 'humidity', 'wind speed', 'total users']].corr()
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
 plt.title('Correlation of weather and users')
 plt.show()
-plt.figure(figsize=(10, 6))
 st.pyplot(plt)
 
 """*  Insight: \
