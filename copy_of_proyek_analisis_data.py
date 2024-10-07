@@ -93,10 +93,18 @@ print(df.isnull().sum())
 print(df2.isnull().sum())
 print(df.info())
 print(df2.info())
-st.write("Hasil cleaning data pada dataset day.csv:")
-st.write(df.isnull().sum)
-st.write("Hasil cleaning data pada dataset hour.csv:")
-st.write(df2.isnull().sum)
+buffer_df = io.StringIO()
+df.info(buf=buffer_df)
+info_df = buffer_df.getvalue()
+
+buffer_df2 = io.StringIO()
+df2.info(buf=buffer_df2)
+info_df2 = buffer_df2.getvalue()
+
+st.write("Hasil cleaning dataset day.csv")
+st.text(info_df)
+st.write("Hasil cleaning dataset hour.csv")
+st.text(info_df2)
 
 """### Cleaning Data (tidak dilakukan karena datasetnya bersih)
 
