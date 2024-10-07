@@ -94,9 +94,9 @@ print(df2.isnull().sum())
 print(df.info())
 print(df2.info())
 st.write("Hasil cleaning data pada dataset day.csv:")
-st.write(df.isnull().sum))
+st.write(df.isnull().sum)
 st.write("Hasil cleaning data pada dataset hour.csv:")
-st.write(df2.isnull().sum))
+st.write(df2.isnull().sum)
 
 """### Cleaning Data (tidak dilakukan karena datasetnya bersih)
 
