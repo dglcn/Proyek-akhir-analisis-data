@@ -94,6 +94,13 @@ print(df2.isnull().sum())
 print(df.info())
 print(df2.info())
 
+buffer = io.StringIO()
+merged_df.info(buf=buffer)
+p = buffer.getvalue()
+
+st.text("Hasil cleaning data:")
+st.text(p)
+
 """### Cleaning Data (tidak dilakukan karena datasetnya bersih)
 
 ## Exploratory Data Analysis (EDA)
