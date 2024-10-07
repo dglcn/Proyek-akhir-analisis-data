@@ -161,6 +161,7 @@ sns.barplot(x='day_type2', y='total users_hour', data=summary_day_type2)
 plt.title('Bar Plot of Total Users (per hour) by day type')
 plt.xlabel('day type')
 plt.ylabel('Total Users')
+st.pyplot()
 
 """## Analisis Lanjutan (Opsional)
 
