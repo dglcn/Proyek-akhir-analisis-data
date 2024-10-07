@@ -25,6 +25,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import matplotlib.pyplot as plt
 
 """## Data Wrangling"""
 
@@ -143,6 +144,7 @@ plt.figtext(0.52,-0.1, 'weather condition : \n\
 3: Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds\n\
 4: Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog', wrap=True, horizontalalignment='center', fontsize=10)
 plt.show()
+st.pyplot()
 
 """### Pertanyaan 2:
 Bagaimana pola penggunaan sepeda berdasarkan tipe hari?
@@ -170,6 +172,7 @@ corr_matrix = df[['temperature', 'humidity', 'wind speed', 'total users']].corr(
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
 plt.title('Correlation of weather and users')
 plt.show()
+st.pyplot()
 plt.figure(figsize=(10, 6))
 
 """*  Insight: \
