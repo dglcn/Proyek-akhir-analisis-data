@@ -20,7 +20,7 @@ Bagaimana pola penggunaan sepeda berdasarkan tipe hari?
 
 ## Import Semua Packages/Library yang Digunakan
 """
-
+import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -158,6 +158,7 @@ plt.figtext(0.52,-0.1, 'weather condition : \n\
 3: Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds\n\
 4: Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog', wrap=True, horizontalalignment='center', fontsize=10)
 plt.show()
+st.pyplot(plt)
 
 """### Pertanyaan 2:
 Bagaimana pola penggunaan sepeda berdasarkan tipe hari?
@@ -174,6 +175,7 @@ sns.barplot(x='day_type2', y='total users_hour', data=summary_day_type2)
 plt.title('Bar Plot of Total Users (per hour) by day type')
 plt.xlabel('day type')
 plt.ylabel('Total Users')
+st.pyplot(plt)
 
 """## Analisis Lanjutan (Opsional)
 
@@ -186,6 +188,7 @@ sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
 plt.title('Correlation of weather and users')
 plt.show()
 plt.figure(figsize=(10, 6))
+st.pyplot(plt)
 
 """*  Insight: \
    1. **Temperature & total users**: korelasi 0.63 yang menunjukkan hubungan positif kuat yang artinya semakin tinggi suhu, maka semakin banyak pengguna sepeda.
