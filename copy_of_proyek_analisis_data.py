@@ -64,6 +64,8 @@ print(df)
 print(df2)
 print(df.info())
 print(df2.info())
+st.table(df)
+st.table(df2)
 
 """### Gathering Data
 
