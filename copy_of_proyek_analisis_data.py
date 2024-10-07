@@ -76,7 +76,8 @@ Pada tahap gathering data, akan dilakukan penggabungan dari kedua dataset terseb
 
 merged_df = pd.merge(df, df2, on='record index', suffixes=('_day', '_hour'))
 print(merged_df.info())
-st.write(merged_df.info)
+st.write("Merged DataFrame")
+st.dataframe(merged_df)
 
 """### Assessing Data
 
