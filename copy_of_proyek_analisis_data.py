@@ -21,13 +21,15 @@ Bagaimana pola penggunaan sepeda berdasarkan tipe hari?
 ## Import Semua Packages/Library yang Digunakan
 """
 
-import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-"""## Data Wrangling"""
+"""## Data Wrangling
+
+Proyek ini akan melakukan pengolahan data mentah dari dataset Bike-sharing-dataset untuk menjawab pertanyaan bisnis yang tertera.
+"""
 
 df = pd.read_csv('day.csv')
 df.rename(columns={'instant': 'record index'}, inplace=True)
@@ -63,26 +65,36 @@ print(df2)
 print(df.info())
 print(df2.info())
 
-"""### Gathering Data"""
+"""### Gathering Data
+
+Dikarenakan terdapat dua dataset; \
+*   **day.csv** yang menampilkan jumlah peminjaman sepeda perhari
+*   **hour.csv** yang menampilkan jumlah peminjaman sepeda perjam
+
+Pada tahap gathering data, akan dilakukan penggabungan dari kedua dataset tersebut.
+"""
 
 merged_df = pd.merge(df, df2, on='record index', suffixes=('_day', '_hour'))
 print(merged_df.info())
 
-"""### Assessing Data"""
+"""### Assessing Data
+
+Kita akan memeriksa apakah ada kesalahan dalam data. Jika ada, maka akan dilakukan *cleaning data*.
+"""
 
 print(df.isnull().sum())
 print(df2.isnull().sum())
 print(df.info())
 print(df2.info())
 
-"""### Cleaning Data (tidak dilakukan karena datasetnya bersih)"""
+"""### Cleaning Data (tidak dilakukan karena datasetnya bersih)
 
-
-
-"""## Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
 
 ### Explore Data Analysis Pertanyaan 1
-Bagaimana pengaruh kondisi cuaca terhadap pengguna sepeda?
+Bagaimana pengaruh kondisi cuaca terhadap pengguna sepeda? \
+
+Kita akan melakukan pengelompokkan terhadap data yang mempengaruhi pertanyaan ini, yaitu *weather situation*.
 """
 
 usage_by_weather = df.groupby('weather situation')['total users'].sum()
@@ -91,7 +103,9 @@ print(usage_by_weather)
 print(usage_by_weather2)
 
 """### Explore Data Analysis Pertanyaan 2
-Bagaimana pola penggunaan sepeda berdasarkan tipe hari?
+Bagaimana pola penggunaan sepeda berdasarkan tipe hari? \
+
+Kita akan melakukan pengelompokkan terhadap data yang mempengaruhi pertanyaan ini, yaitu tipe hari
 """
 
 merged_df = pd.merge(df, df2, on='record index', suffixes=('_day', '_hour'))
@@ -144,7 +158,6 @@ plt.figtext(0.52,-0.1, 'weather condition : \n\
 3: Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds\n\
 4: Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog', wrap=True, horizontalalignment='center', fontsize=10)
 plt.show()
-st.pyplot()
 
 """### Pertanyaan 2:
 Bagaimana pola penggunaan sepeda berdasarkan tipe hari?
@@ -161,7 +174,6 @@ sns.barplot(x='day_type2', y='total users_hour', data=summary_day_type2)
 plt.title('Bar Plot of Total Users (per hour) by day type')
 plt.xlabel('day type')
 plt.ylabel('Total Users')
-st.pyplot()
 
 """## Analisis Lanjutan (Opsional)
 
@@ -173,7 +185,6 @@ corr_matrix = df[['temperature', 'humidity', 'wind speed', 'total users']].corr(
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
 plt.title('Correlation of weather and users')
 plt.show()
-st.pyplot()
 plt.figure(figsize=(10, 6))
 
 """*  Insight: \
@@ -201,3 +212,6 @@ plt.figure(figsize=(10, 6))
   2. Penggguna sepeda paling banyak kedua berada di tipe hari akhir pekan.
   3. Penggguna sepeda paling sedikit berada di tipe hari liburan.
 """
+
+all_df = pd.merge(df, df2, on='record index', suffixes=('_day', '_hour'))
+all_df.to_csv('all_data.csv', index=False)
