@@ -93,13 +93,10 @@ print(df.isnull().sum())
 print(df2.isnull().sum())
 print(df.info())
 print(df2.info())
-
-buffer = io.StringIO()
-merged_df.info(buf=buffer)
-p = buffer.getvalue()
-
-st.text("Hasil cleaning data:")
-st.text(p)
+st.write("Hasil cleaning data pada dataset day.csv:")
+st.write(df.isnull().sum))
+st.write("Hasil cleaning data pada dataset hour.csv:")
+st.write(df2.isnull().sum))
 
 """### Cleaning Data (tidak dilakukan karena datasetnya bersih)
 
